@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3f51b5;
+    --secondary-color: #0F0F0B;
+    --azul-claro: #c5cae9;
+    --branco: #fff;
+    --cinza: #ccc;
+    --cinza-claro: #ececec;
+    --cinza-escuro: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--cinza-claro);
+    font: 2rem 'Montserrat' ,'Open Sans', sans-serif;
+}
+
+.todo {
+    display: flex;
+    width: 70vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.todo__title {
+    display: flex;
+    background-color: var(--cinza-escuro);
+    width: 100%;
+    height: 80px;
+    font-weight: bold;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: var(--branco);
+}
+
+.todo__list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo__item{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid var(--cinza-escuro);
+}
+.todo__item > div {
+    width: 80%;
+}
+.todo__item:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--primary-color);
+    color: var(--branco);
+}
+
+.todo__item > input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+}
+
+.todo__item > input[type='checkbox'] {
+    margin-left: 10px;
+    margin-right: 10px;
+    accent-color: green;
+}
+
+.todo__item > input[type='button'] {
+    margin-right: 10px;
+    background-color: red;
+    color: var(--branco);
+}
+
+.todo__item > input[type='button'],
+.todo__item > input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;    
+}
+
+.todo__item > input[type='checkbox']:checked + div {
+    text-decoration:line-through;
+}
+
+.todo__new-item{
+    display: flex;
+    background-color: var(--azul-claro);
+    width: 100%;
+    height: 70px;
+    border-radius: 8px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 0px 0px 5px var(--secondary-color);
+    margin: 10px;
+    font: inherit;
+}
+
+.todo__new-item > input{
+    background-color: var(--azul-claro);
+    border: none;
+    width: 90%;
+    outline: none;
+    font: inherit;
+}
+
+.todo__new-item > input::placeholder {
+    font-style: italic;
+    font-weight: normal;
+}
+
+@media (max-width: 700px) {
+    .todo__item {
+        font-size: 1.5rem;
+    }
+}
